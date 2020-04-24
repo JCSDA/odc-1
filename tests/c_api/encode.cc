@@ -541,7 +541,7 @@ CASE("Encode to a file descriptor") {
     // Do the encoding
 
     eckit::TmpFile tf;
-    int fd = ::open(tf.asString().c_str(), O_CREAT|O_WRONLY, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
+    int fd = ::open(tf.asString().c_str(), O_CREAT|O_WRONLY, 0666);
     ASSERT(fd != -1);
     long sz;
     try {
